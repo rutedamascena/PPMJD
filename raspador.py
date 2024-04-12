@@ -231,18 +231,18 @@ dados_html
 
 """#**ENVIANDO E-MAIL**"""
 
-def enviar_email_com_html(html, destinatario_email):
+def enviar_email_com_html(html):
     smtp_server = "smtp-relay.brevo.com"
     port = 587
     email = "damascenarute@gmail.com"
     password = os.environ.get('CHAVE_EMAIL')
     remetente = "damascenarute@gmail.com"
-    destinatarios = ["anadirdamascena@gmail.com", destinatario_email]
+    destinatario_email = ["anadirdamascena@gmail.com", "eduardovg2@insper.edu.br", "damascenarute@gmail.com"]
 
 
     msg = MIMEMultipart()
     msg['From'] = remetente
-    msg['To'] = ", ".join(destinatarios)
+    msg['To'] = ", ".join(destinatario_email)
     msg['Subject'] = 'E-mail com Dados do Clipping'
 
     msg.attach(MIMEText(html, 'html'))
